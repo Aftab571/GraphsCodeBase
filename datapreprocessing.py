@@ -43,7 +43,7 @@ class DataPrep:
         data.train_mask=train_mask
         data.val_mask=val_mask
 
-        data.y= torch.tensor(labelList)
+        data.y= torch.tensor(labelList).type(torch.LongTensor)
         
         dataDict= {
             "datasetSize": df2.shape[0],
