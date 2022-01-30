@@ -1,0 +1,10 @@
+server_uri: bolt://localhost:7687
+admin_user: neo4j
+admin_pass: "123456"
+
+queries:
+  #Cora
+  - GET_PAPER_CITES_CQL: |
+      MATCH (p1:paper)-[r:cites]-(p2:paper) RETURN p1.edgeIndex as start ,p2.edgeIndex as end
+  - GET_ALL_NODES_CQL: |
+      MATCH (n) RETURN n.features as features, n.subject as subject ,ID(n)
